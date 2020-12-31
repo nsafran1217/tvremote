@@ -7,7 +7,7 @@ function doIt(el) {
     var sleeptext = document.getElementById("sleeptime").value;
     $.ajax({
         type: "POST",
-        url: "http://127.0.0.1:8000",
+        url: "http://tv.nsafran.com:8000",
         data: { action: button, time: sleeptext},
         success: callbackFunc
     });

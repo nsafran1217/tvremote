@@ -13,7 +13,8 @@ config = {
     "method": "websocket",
     "timeout": 2,
 }
-
+with samsungctl.Remote(config) as remote:
+            remote.control("KEY_POWER")
 def PowerOff():
     try:
         with samsungctl.Remote(config) as remote:
@@ -43,6 +44,7 @@ def Sleep(time):
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   PowerOff()
-   VolDown()
-   Sleep()
+#   PowerOff()
+   ya = VolDown()
+   print(ya)
+#   Sleep()
