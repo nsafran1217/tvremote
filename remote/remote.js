@@ -1,5 +1,5 @@
 'use strict'
-
+ 
 
 
 function doIt(el) {
@@ -17,7 +17,7 @@ function doIt(el) {
 function callbackFunc(response) {
     // do something with the response
     console.log(response);
-    document.getElementById("status").innerHTML = "SUCCESS!";
+    document.getElementById("status").innerHTML = response;
     window.setTimeout((setStatusBack), 2000);
 }
 

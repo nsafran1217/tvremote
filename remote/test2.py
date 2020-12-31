@@ -11,27 +11,25 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length)  # Get the data
 
 
-        post_text = post_data.decode("utf-8") 
-        action = (post_text.split("&")[0]).split("=")[1]
-        sleeptime = (post_text.split("&")[1]).split("=")[1]
+        post_text = post_data.decode("utf-8")  #convert raw bytes to text
+        action = (post_text.split("&")[0]).split("=")[1] #split first param
+        sleeptime = (post_text.split("&")[1]).split("=")[1] #and second
 
 
-        if action == 'Power':
-            tvremote.PowerOff()
+        if action == 'Power': #call functions in tvremote with correct action
+            result = tvremote.PowerOff()
         if action == 'VolDown':
-            tvremote.VolDown()
+            result = tvremote.VolDown()
         if action == 'Sleep':
-            tvremote.Sleep(sleeptime)
+            result = tvremote.Sleep(sleeptime)
         
-
+        print(result)
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
         self.end_headers()
         response = BytesIO()
 
-        response.write(b'This is POST request. ')
-        response.write(b'Received: ')
-        response.write(post_data)
+        response.write(str.encode(str(result)))
         self.wfile.write(response.getvalue())
 
 
