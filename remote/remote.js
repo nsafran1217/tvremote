@@ -18,7 +18,7 @@ function callbackFunc(response) {
     // do something with the response
     console.log(response);
     document.getElementById("status").innerHTML = response;
-    window.setTimeout((setStatusBack), 2000);
+    window.setTimeout((setStatusBack), 3000);
 }
 
 function setStatusBack() {
