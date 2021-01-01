@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="light-theme">
-    <h1>Header</h1>
-        <p id="msgID">paragraph</p>
-        <ul>
-            <li class="listCLASS">Add visual styles</li>
-            <li class="listCLASS">Add light and dark themes</li>
-            <li>Enable switching the theme</li>  
-        </ul>
-        <div>
-            <button class="btn">Dark</button>
-        </div>
-    
-    <script src="app.js"></script>
+    <h1>TV Remote</h1>
+    <p id="status">Make a selection</p>
+    <div>
+       <button class="Power" onclick="doIt(this)">Power Off</button>
+       <button class="VolDown" onclick="doIt(this)">Volume Down</button>
+       <button class="Sleep" onclick="doIt(this)">Sleep</button>
+       <input type="text" id="sleeptime" value="30">
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="remote.js"></script>
     <noscript>You need to enable JavaScript to view the full site.</noscript>
 </body>
-</html>
+</html> 

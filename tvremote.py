@@ -3,10 +3,9 @@
 from samsungtvws import SamsungTVWS
 from threading import Timer
 
-tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
-
 def PowerOff():
     try:
+        tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
         tv.shortcuts().power()
         return "TV Turned Off"
     except Exception as e:
@@ -14,7 +13,8 @@ def PowerOff():
 
 def VolDown():
     try:
-        tv.shortcuts().volume_down
+        tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
+        tv.shortcuts().volume_down()
         return "Volume Down Pressed"
     except Exception as e:
         return "Error: "+ str(e)

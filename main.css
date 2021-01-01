@@ -3,39 +3,60 @@
   --white: #ffffff;
   --black: #000000;
 }
-
+ 
 * {
-  color: var(--fontColor);
+  color: #ffffff;
   font-family: helvetica;
 }
 
 body {
-    background: var(--bg);
+    background: #000000;
 }
 
-ul {
-    font-family: helvetica;
+#status {
+  font-size: 20px;
 }
-li {
-    list-style: circle;
-  }
-  
-.listCLASS {
-  list-style: square;
-}
-
-.btn {
+.Sleep {
+  color: #000000;
   position: absolute;
-  top: 20px;
-  left: 250px;
+  top: 120px;
+  left: 200px;
   height: 50px;
-  width: 50px;
+  font-size: 20px;
+
+}
+#sleeptime{
+  color: #000000;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  font-size: 20px;
+  width: 150px;
+}
+
+.Power {
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   border: none;
   color: var(--btnFontColor);
-  background-color: var(--btnBg);
+  background-color: #ff0000;
 }
-.btn:focus { outline-style: none; }
+.VolDown {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: #ff3300;
+}
+
 
 .light-theme {
   --bg: var(--green);
