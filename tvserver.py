@@ -36,5 +36,5 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.getvalue())
 
 
-httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('tv.nsafran.com', 8000), SimpleHTTPRequestHandler)
 httpd.serve_forever()
