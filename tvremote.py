@@ -5,10 +5,21 @@ from samsungtvws import SamsungTVWS
 from threading import Timer
 import threading
 
+tvIP = '10.35.0.13' 
+tvPort = 8002
+tvToken = 10397787
+
+def CheckSleep():
+
+    for x in threading.enumerate():
+        if x.name == "TvTimerThread":
+            return "A sleep timer is set"
+        else:
+            return "Make a selection"
 
 def PowerOff():
     try:
-        tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
+        tv = SamsungTVWS(host=tvIP, port=tvPort, token=tvToken)
         tv.shortcuts().power()
         return "Power Pressed"
     except Exception as e:
@@ -16,7 +27,7 @@ def PowerOff():
 
 def VolUp():
     try:
-        tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
+        tv = SamsungTVWS(host=tvIP, port=tvPort, token=tvToken)
         tv.shortcuts().volume_up()
         return "Volume Up Pressed"
     except Exception as e:
@@ -24,7 +35,7 @@ def VolUp():
 
 def VolDown():
     try:
-        tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
+        tv = SamsungTVWS(host=tvIP, port=tvPort, token=tvToken)
         tv.shortcuts().volume_down()
         return "Volume Down Pressed"
     except Exception as e:
@@ -32,7 +43,7 @@ def VolDown():
 
 def Mute():
     try:
-        tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
+        tv = SamsungTVWS(host=tvIP, port=tvPort, token=tvToken)
         tv.shortcuts().mute()
         return "Mute Pressed"
     except Exception as e:
@@ -53,14 +64,11 @@ def Sleep(time):
     except Exception as e:
         return "Error: "+ str(e)
 
-def test():
-    thread = threading.enumerate()
-    print(thread)
-     
-
-
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
    PowerOff()
+   VolUp()
    VolDown()
    Sleep()
+   Mute()
+   CheckSleep()

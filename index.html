@@ -7,10 +7,9 @@
     <title>TV Remote</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body class="light-theme">
+<body onload="checkIfSleepSched()">
     <h1>TV Remote</h1>
     <p id="status">Make a selection</p>
-    <p id="sleepstatus"></p>
     <div>
        <button class="Power" onclick="doIt(this)">Power</button>
        <button class="VolUp" onclick="doIt(this)">Vol +</button>
