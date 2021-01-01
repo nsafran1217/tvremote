@@ -9,7 +9,7 @@ config = {
     "description": "PC",
     "id": "",
     "host": "10.35.0.13",
-    "port": 8002,
+    "port": 8001,
     "method": "websocket",
     "timeout": 2,
 }
