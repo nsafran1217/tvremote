@@ -1,32 +1,21 @@
 # tvremote.py
-import samsungctl
+#token = 10397787 #THIS IS FOR PROXY 10.35.0.165
+from samsungtvws import SamsungTVWS
 from threading import Timer
 
-import sys
-
-config = {
-    "name": "samsungctl",
-    "description": "PC",
-    "id": "",
-    "host": "10.35.0.13",
-    "port": 8002,
-    "method": "websocket",
-    "timeout": 2,
-}
+tv = SamsungTVWS(host='10.35.0.13', port=8002, token=10397787)
 
 def PowerOff():
     try:
-        with samsungctl.Remote(config) as remote:
-            remote.control("KEY_POWER")
-            return "TV Turned Off"
+        tv.shortcuts().power()
+        return "TV Turned Off"
     except Exception as e:
         return "Error: "+ str(e)
 
 def VolDown():
     try:
-        with samsungctl.Remote(config) as remote:
-            remote.control("KEY_VOLDOWN")
-            return "Volume Down Pressed"
+        tv.shortcuts().volume_down
+        return "Volume Down Pressed"
     except Exception as e:
         return "Error: "+ str(e)
 
