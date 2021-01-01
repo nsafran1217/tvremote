@@ -11,11 +11,10 @@ tvToken = 10397787
 
 def CheckSleep():
 
-    for x in threading.enumerate():
-        if x.name == "TvTimerThread":
-            return "A sleep timer is set"
-        else:
-            return "Make a selection"
+    if any(x.name == "TvTimerThread" for x in threading.enumerate()):
+        return "A sleep timer is set"
+    else:
+        return "Make a selection"
 
 def PowerOff():
     try:
