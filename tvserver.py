@@ -15,13 +15,16 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         action = (post_text.split("&")[0]).split("=")[1] #split first param
         sleeptime = (post_text.split("&")[1]).split("=")[1] #and second
 
-
         if action == 'Power': #call functions in tvremote with correct action
             result = tvremote.PowerOff()
+        if action == 'VolUp':
+            result = tvremote.VolUp()            
         if action == 'VolDown':
             result = tvremote.VolDown()
         if action == 'Sleep':
             result = tvremote.Sleep(sleeptime)
+        if action == 'Mute':
+            result = tvremote.Mute()
         
         print(result)
         self.send_response(200)
@@ -33,5 +36,5 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.getvalue())
 
 
-httpd = HTTPServer(('tv.nsafran.com', 8000), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('localhost', 8000), SimpleHTTPRequestHandler)
 httpd.serve_forever()
