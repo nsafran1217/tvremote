@@ -1,4 +1,5 @@
 # tvremote.py
+#https://github.com/xchwarze/samsung-tv-ws-api
 #token = 10397787 #THIS IS FOR PROXY 10.35.0.165
 from samsungtvws import SamsungTVWS
 from threading import Timer
